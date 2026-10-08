@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Fraud Detection System</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 40px;
+        }
+
+        .container {
+            width: 450px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 25px;
+            background: #333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI Fraud Detection</h1>
+
+    <form action="/predict" method="POST">
+
+        <label>Transaction Amount (₹)</label>
+        <input type="number" name="amount" required>
+
+        <label>Account Balance (₹)</label>
+        <input type="number" name="balance" required>
+
+        <label>Previous Transactions</label>
+        <input type="number" name="previous_transactions" required>
+
+        <label>International Transaction</label>
+        <select name="international" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Unusual Location</label>
+        <select name="unusual_location" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <button type="submit">Check Transaction</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
